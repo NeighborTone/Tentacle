@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tentacle : MonoBehaviour
+public class Tentacle2 : MonoBehaviour
 {
     public int length;
     public LineRenderer line;
@@ -10,12 +10,15 @@ public class Tentacle : MonoBehaviour
     private Vector3[] segmentV;
     public Transform targetDir;
     public float targetDist; //点と点の間隔。小さいほど短い線になる
-    public float smoothSpeed;//線と線の移動の補間
-    public float trailSpeed;
+    public float smoothSpeed;//移動が止まったときにどれくらい動かすか
 
     public float wiggleSpeed;
     public float wiggleMagnitude;
     public Transform wiggleDir;
+
+    //public Transform tailEnd;
+
+    public Transform[] bodyParts;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +36,16 @@ public class Tentacle : MonoBehaviour
         segmentPoses[0] = targetDir.position;
         for(int i = 1; i < segmentPoses.Length; ++i)
         {
-            segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed + i / trailSpeed);
+            Vector3 targetPos = segmentPoses[i - 1] + (segmentPoses[i] - segmentPoses[i - 1]).normalized * targetDist;
+            segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], targetPos, ref segmentV[i], smoothSpeed);
+
+            if (bodyParts[i - 1] != null)
+            {
+                bodyParts[i - 1].position = segmentPoses[i];
+            }
         }
         line.SetPositions(segmentPoses);
+
+        //tailEnd.position = segmentPoses[segmentPoses.Length - 1];
     }
 }

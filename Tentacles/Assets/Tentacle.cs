@@ -18,11 +18,12 @@ public class Tentacle : MonoBehaviour
     public Transform wiggleDir;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         line.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentV = new Vector3[length];
+        ResetPos();
     }
 
     // Update is called once per frame
@@ -34,6 +35,16 @@ public class Tentacle : MonoBehaviour
         for(int i = 1; i < segmentPoses.Length; ++i)
         {
             segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed + i / trailSpeed);
+        }
+        line.SetPositions(segmentPoses);
+    }
+
+    void ResetPos()
+    {
+        segmentPoses[0] = targetDir.position;
+        for(int i = 1; i < segmentPoses.Length; ++i)
+        {
+             segmentPoses[i] = segmentPoses[i - 1] + targetDir.right * targetDist;
         }
         line.SetPositions(segmentPoses);
     }

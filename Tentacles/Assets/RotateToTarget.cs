@@ -8,6 +8,8 @@ public class RotateToTarget : MonoBehaviour
     private Vector2 direction;
     [SerializeField] private Camera cameraMain;
     public float moveSpeed = 5;
+    
+    [SerializeField] private bool isUp = false;
 
     // Update is called once per frame
     void Update()
@@ -18,9 +20,12 @@ public class RotateToTarget : MonoBehaviour
 
         //スプライトが上むいているときの処理
         //横向きならいらない
-        // var e = rota.eulerAngles;
-        // e.z -= 90;
-        // rota.eulerAngles = e;
+        if (isUp)
+        {
+            var e = rota.eulerAngles;
+            e.z += 90;
+            rota.eulerAngles = e;
+        }
 
         transform.rotation = Quaternion.Slerp(transform.rotation, rota, rotaSpeed * Time.deltaTime);
 

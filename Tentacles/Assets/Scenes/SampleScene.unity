@@ -382,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &340430289
 Transform:
   m_ObjectHideFlags: 0
@@ -652,6 +652,7 @@ MonoBehaviour:
   rotaSpeed: 20
   cameraMain: {fileID: 519420031}
   moveSpeed: 6.8
+  isUp: 1
 --- !u!212 &391688145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -692,9 +693,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1633996837, guid: 533c6408281dc4b4ebd720915e1af7d4, type: 3}
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -2061645934, guid: 567e7a5035609f44bbcb0086ab8cfcba, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -936,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 556609005}
   isUp: 1
 --- !u!1 &556609003
 GameObject:
@@ -1036,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 1840894899}
   isUp: 1
 --- !u!1 &610303455
 GameObject:
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   rotaSpeed: 20
   cameraMain: {fileID: 519420031}
   moveSpeed: 6.8
+  isUp: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 347396955}
   isUp: 1
 --- !u!1 &982440653
 GameObject:
@@ -1450,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 1028568931}
   isUp: 1
 --- !u!1 &1028568929
 GameObject:
@@ -1550,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 554828397}
   isUp: 1
 --- !u!1 &1083682489
 GameObject:
@@ -1794,7 +1796,7 @@ MonoBehaviour:
   length: 8
   line: {fileID: 1420071291}
   targetDir: {fileID: 1083682490}
-  targetDist: 1
+  targetDist: 0.4
   smoothSpeed: 0.001
   wiggleSpeed: 0
   wiggleMagnitude: 0
@@ -2090,7 +2092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 391688146}
+  target: {fileID: 629445850}
   isUp: 1
 --- !u!1 &1975966727
 GameObject:
@@ -2140,7 +2142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2074776946
 Transform:
   m_ObjectHideFlags: 0
